@@ -18,9 +18,9 @@
     @if ($card->style == "1")
 
         @if ($card->background_color == 'dark')
-            <link rel="stylesheet" href="{{asset('storage/assets/css/cards/style1/dark.css')}}">
+            <link rel="stylesheet" href="{{asset('assets/css/cards/style1/dark.css')}}">
         @else
-            <link rel="stylesheet" href="{{asset('storage/assets/css/cards/style1/ligth.css')}}">
+            <link rel="stylesheet" href="{{asset('assets/css/cards/style1/ligth.css')}}">
         @endif
 
         
