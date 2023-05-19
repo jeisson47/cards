@@ -57,7 +57,7 @@
 
                     @if ($card->facebook_link)
 
-                        <a href="{{$card->facebook_link}}" target="_blanck" class="facebook-link mx-1"></a>
+                        <a href="{{$card->facebook_link}}" target="_blank" class="facebook-link mx-1"></a>
 
                     @endif
 
@@ -87,7 +87,7 @@
 
                     @if ($card->whatsApp_link)
 
-                    <a href="httsp://wa.me/+57{{$card->whatsApp_link}}" target="_blanck" class="whatsApp-link mx-1"></a>
+                    <a href="https://wa.me/+57{{$card->whatsApp_link}}" target="_blank" class="whatsApp-link mx-1"></a>
 
                     @endif
 
