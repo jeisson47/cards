@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap');
+
+*{
+    font-family: 'Nunito', sans-serif;
+}
+
+body{
+    background-color: #323232;
+}
+
+.card{
+    background-color: #000;
+    color: #fff;
+    border-radius: 0px;
+}
+.card-img-top{
+    border-radius: 0px;
+}
+.map{
+    background-image: url("../../../img/cards/icons/PRUEBA_DISENO_TARJETASDIGITALES_AUTOSTOK6.png");
+    background-size:contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 60px;
+    width: 60px;
+    display: block;
+}
+.calendar{
+    background-image: url("../../../img/cards/icons/PRUEBA_DISENO_TARJETASDIGITALES_AUTOSTOK8.png");
+    background-size:contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 60px;
+    width: 60px;
+    display: block;
+}
+
+.facebook-link{
+    background-image: url("../../../img/cards/icons/PRUEBA_DISENO_TARJETASDIGITALES_AUTOSTOK9.png");
+    background-size:contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 30px;
+    width: 30px;
+    display: block;
+}
+.instagram-link{
+    background-image: url("../../../img/cards/icons/PRUEBA_DISENO_TARJETASDIGITALES_AUTOSTOK11.png");
+    background-size:contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 30px;
+    width: 30px;
+    display: block;
+}
+
+.tiktok-link{
+    background-image: url("../../../img/cards/icons/PRUEBA_DISENO_TARJETASDIGITALES_AUTOSTOK10.png");
+    background-size:contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 30px;
+    width: 30px;
+    display: block;
+}
+
+
+.whatsApp-link{
+    background-image: url("../../../img/cards/icons/PRUEBA_DISENO_TARJETASDIGITALES_AUTOSTOK12.png");
+    background-size:contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 30px;
+    width: 30px;
+    display: block;
+}
+
+hr{
+    border-color: var(--bs-secondary);
+    opacity: .5;
+}
