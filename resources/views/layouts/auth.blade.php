@@ -26,14 +26,14 @@
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|Noto+Sans:300,400,500,600,700,800|PT+Mono:300,400,500,600,700" rel="stylesheet" />
   <!-- Nucleo Icons -->
-  <link href="{{asset('assets/css/nucleo-icons.css')}}" rel="stylesheet" />
-  <link href="{{asset('assets/css/nucleo-svg.css')}}" rel="stylesheet" />
+  <link href="{{asset('storage/assets/css/nucleo-icons.css')}}" rel="stylesheet" />
+  <link href="{{asset('storage/assets/css/nucleo-svg.css')}}" rel="stylesheet" />
   <!-- Font Awesome Icons -->
   <script src="https://kit.fontawesome.com/349ee9c857.js" crossorigin="anonymous"></script>
   
-  <link href="{{asset('assets/css/nucleo-svg.css')}}" rel="stylesheet" />
+  <link href="{{asset( 'storage/assets/css/nucleo-svg.css')}}" rel="stylesheet" />
   <!-- CSS Files -->
-  <link id="pagestyle" href="{{asset('assets/css/corporate-ui-dashboard.css')}}?v=1.0.0" rel="stylesheet" />
+  <link id="pagestyle" href="{{asset('storage/assets/css/corporate-ui-dashboard.css')}}?v=1.0.0" rel="stylesheet" />
 </head>
 
 <body class="g-sidenav-show  bg-gray-100">
@@ -225,12 +225,12 @@
 
   <!--   Core JS Files   -->
 
-  <script src="{{asset('assets/js/core/popper.min.js')}} "></script>
-  <script src="{{asset('assets/js/core/bootstrap.min.js')}}"></script>
-  <script src="{{asset('assets/js/plugins/perfect-scrollbar.min.js')}}"></script>
-  <script src="{{asset('assets/js/plugins/smooth-scrollbar.min.js')}}"></script>
-  <script src="{{asset('assets/js/plugins/chartjs.min.js')}}"></script>
-  <script src="{{asset('assets/js/plugins/swiper-bundle.min.js')}}" type="text/javascript"></script>
+  <script src="{{asset('storage/assets/js/core/popper.min.js')}} "></script>
+  <script src="{{asset('storage/assets/js/core/bootstrap.min.js')}}"></script>
+  <script src="{{asset('storage/assets/js/plugins/perfect-scrollbar.min.js')}}"></script>
+  <script src="{{asset('storage/assets/js/plugins/smooth-scrollbar.min.js')}}"></script>
+  <script src="{{asset('storage/assets/js/plugins/chartjs.min.js')}}"></script>
+  <script src="{{asset('storage/assets/js/plugins/swiper-bundle.min.js')}}" type="text/javascript"></script>
 
 
   <script>
@@ -245,7 +245,7 @@
   <!-- Github buttons -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Corporate UI Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="{{asset('assets/js/corporate-ui-dashboard.min.js')}}?v=1.0.0"></script>
+  <script src="{{asset('storage/assets/js/corporate-ui-dashboard.min.js')}}?v=1.0.0"></script>
   <script>
     if (document.getElementsByClassName('mySwiper')) {
       var swiper = new Swiper(".mySwiper", {
