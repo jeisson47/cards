@@ -7,7 +7,7 @@
 <main class="container">
 
     <div class="d-flex align-items-center justify-content-center py-3">
-        <div class="bg-white p-3 rounded shadow col-6">
+        <div class="bg-white p-3 rounded shadow col-md-6 col-12">
             
             <div class="text-end">
                 <form method="POST" action="{{route('card.destroy',$card->id)}}">
