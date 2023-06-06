@@ -13,12 +13,17 @@
         :root{
             --bs-primary:{{$card->color_primary}};
             --bs-secondary:{{$card->color_secondary}};
+            --bs-background:{{$card->color_background}};
+        }
+        .card{
+            background-color: var(--bs-background) !important;
+            border-radius: 0px;
         }
     </style>
 
     @if ($card->style == "1")
 
-        @if ($card->background_color == 'dark')
+        @if ($card->background_color == 'light')
             <link rel="stylesheet" href="{{asset('assets/css/cards/style1/dark.css')}}">
         @else
             <link rel="stylesheet" href="{{asset('assets/css/cards/style1/ligth.css')}}">

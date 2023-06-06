@@ -70,16 +70,30 @@
 
                         </div>
 
-                        <div class="form-group">
-                            <label for="background">Color de fondo</label>
-                            <select class="form-control" id="background" name="background">
-                              <option value="light" @selected($card->background_color == "light")>Blanco</option>
-                              <option value="dark" @selected($card->background_color == "dark")>Negro</option>
-                            </select>
-                            @error('background')
-                                <p class="text-danger small">{{$message}}</p>
-                            @enderror
+
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label for="background">Color de iconos</label>
+                                    <select class="form-control" id="background" name="background">
+                                        <option value="light" @selected($card->background_color == "light")>Blanco</option>
+                                        <option value="dark" @selected($card->background_color == "dark")>Negro</option>
+                                    </select>
+                                    @error('background')
+                                        <p class="text-danger small">{{$message}}</p>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <label for="color_background" class="form-label">Color de fondo</label>
+                                <input type="color" name="color_background" class="form-control form-control-color" id="color_background" value="{{$card->color_background}}" title="Choose your color">
+    
+                                @error('color_background')
+                                    <p class="text-danger small">{{$message}}</p>
+                                @enderror
+                            </div>
                         </div>
+
 
                         <div class="form-group">
                             <label for="front">Foto de portada</label>

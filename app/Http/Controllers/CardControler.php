@@ -40,6 +40,7 @@ class CardControler extends Controller
             'color_primary' =>['regex:/^[A-Za-z0-9#]+$/','max:7'],
             'color_secondary' =>['regex:/^[A-Za-z0-9#]+$/','max:7'],
             'background' => 'in:dark,light',
+            'color_background'=>['regex:/^[A-Za-z0-9#]+$/','max:7','required'],
             'front' => "required|image|max:2048|mimes:jpeg,png,jpg",
             'logo' => "required|image|max:2048|mimes:jpeg,png,jpg",
             'name_person' => 'required|max:250|regex:/^[\pL\s\d.,()&$#!¿?¡@_-]+$/u',
@@ -64,6 +65,7 @@ class CardControler extends Controller
         $card->color_secondary = $request->color_secondary;
         $card->status = $request->status;
         $card->background_color = $request->background;
+        $card->color_background = $request->color_background;
 
         $file_front = $request->file('front');
         $path_front = $file_front->store('tarjetas/portada', 'public'); // Guardar la foto en la carpeta "photos" dentro de la carpeta "public"
@@ -138,6 +140,7 @@ class CardControler extends Controller
             'color_primary' =>['regex:/^[A-Za-z0-9#]+$/','max:7'],
             'color_secondary' =>['regex:/^[A-Za-z0-9#]+$/','max:7'],
             'background' => 'in:dark,light',
+            'color_background'=>['regex:/^[A-Za-z0-9#]+$/','max:7','required'],
             'front' => "nullable|image|max:2048|mimes:jpeg,png,jpg",
             'logo' => "nullable|image|max:2048|mimes:jpeg,png,jpg",
             'name_person' => 'required|max:250|regex:/^[\pL\s\d.,()&$#!¿?¡@_-]+$/u',
@@ -163,6 +166,7 @@ class CardControler extends Controller
         $card->color_secondary = $request->color_secondary;
         $card->status = $request->status;
         $card->background_color = $request->background;
+        $card->color_background = $request->color_background;
 
         if ($request->hasFile('front')) {
         $file_front = $request->file('front');
