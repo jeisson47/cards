@@ -64,7 +64,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body border-0">
-            <p>Podras ingresar a el calendario de {{$card->name_person}} y agendar tu cita, pero recuerda que deben ser en los soguientes horarios</p>
+            <p>Podras ingresar a el calendario de {{$card->name_person}} y agendar tu cita, pero recuerda que deben ser en los siguientes horarios</p>
         
         @if ($schedules)
         @forelse($schedules as $clave => $contenido)
