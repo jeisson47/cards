@@ -33,6 +33,7 @@ Route::middleware('auth')->group(function () {
 
     Route::resource('/card', CardControler::class)->except('show')->names('card');
 
+    Route::post('/card/add/horarios', [CardControler::class, 'schedules'])->name('card.schedules');
     Route::resource('/companias', CompaniesController::class)->names('companies');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

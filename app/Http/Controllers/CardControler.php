@@ -8,6 +8,70 @@ use Illuminate\Http\Request;
 
 class CardControler extends Controller
 {
+    public function schedules(Request $request)
+    {
+        $card = Card::where('id',$request->id)->first();
+
+        if($card->schedules === null){
+            $card->schedules = [
+                "lunes"=> [
+                    "desde" => "00:00",
+                    "hasta" => "00:00",
+                    "state" => "disable",
+                ],
+                "martes"=> [
+                    "desde" => "00:00",
+                    "hasta" => "00:00",
+                    "state" => "disable",
+                ],
+                "miercoles"=> [
+                    "desde" => "00:00",
+                    "hasta" => "00:00",
+                    "state" => "disable",
+                ],
+                "jueves"=> [
+                    "desde" => "00:00",
+                    "hasta" => "00:00",
+                    "state" => "disable",
+                ],
+                "viernes"=> [
+                    "desde" => "00:00",
+                    "hasta" => "00:00",
+                    "state" => "disable",
+                ],
+                "sabado"=> [
+                    "desde" => "00:00",
+                    "hasta" => "00:00",
+                    "state" => "disable",
+                ],
+                "domingo"=> [
+                    "desde" => "00:00",
+                    "hasta" => "00:00",
+                    "state" => "disable",
+                ]
+
+            ];
+
+        }
+
+        if(is_array($card->schedules)){
+            $array =   $card->schedules;
+        }else{
+            $array = json_decode($card->schedules,true);
+        }
+            
+            $array["$request->day"] = [
+                "desde" => "$request->desde",
+                "hasta" => "$request->hasta",
+                "state" => "$request->state",
+            ];
+
+            $card->schedules = $array;
+        
+        $card->save();
+
+    }
+
     /**
      * Display a listing of the resource.
      */
@@ -96,7 +160,7 @@ class CardControler extends Controller
 
         $card->save();
 
-        return redirect()->route('card.index');
+        return redirect()->route('card.edit',$card->id);
         //
     }
 
@@ -112,7 +176,9 @@ class CardControler extends Controller
             abort(404);
         }
 
-        return view('cards.show',compact('card'));
+        $schedules = json_decode($card->schedules);
+
+        return view('cards.show',compact('card','schedules'));
     }
 
     /**
@@ -124,7 +190,9 @@ class CardControler extends Controller
         $card = Card::findOrFail($id);
         $companies = Companie::all();
 
-        return view('cards.edit',compact('card','companies'));
+        $schedules = json_decode($card->schedules);
+
+        return view('cards.edit',compact('card','companies','schedules'));
 
     }
 

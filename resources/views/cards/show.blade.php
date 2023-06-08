@@ -19,6 +19,9 @@
             background-color: var(--bs-background) !important;
             border-radius: 0px;
         }
+        .bg-primary{
+            background-color: var(--bs-primary) !important;
+        }
     </style>
 
     @if ($card->style == "1")
@@ -34,6 +37,38 @@
 
 </head>
 <body>
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header border-0">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Atención</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body border-0">
+            <p>Podras ingresar a el calendario de {{$card->name_person}} y agendar tu cita, pero recuerda que deben ser en los soguientes horarios</p>
+
+        @forelse($schedules as $clave => $contenido)
+                @if ($contenido->state === "enable")
+                <p><b>{{ $clave }}</b> de {{date('h:i A', strtotime($contenido->desde)) }} a {{date('h:i A', strtotime($contenido->hasta)) }}</p>
+        @endif
+        @empty
+        <p>No hay preferencia de horarios</p>
+        @endforelse
+
+        <p>En el caso de agendar la cita por fuera de estos horarios, se cancelara automaticamente.</p>
+
+          
+        </div>
+        <div class="modal-footer border-0">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <a href="{{$card->calendar}}" class="btn bg-primary" target="_blanck">Entiendo, crear cita</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
     <div class="d-flex w-100 vh-100 align-items-center justify-content-center">
 
@@ -51,7 +86,7 @@
 
                     <div class="d-flex justify-content-end">
                         <a href="{{$card->location_map}}" target="_blanck" class="map"></a>
-                        <a href="{{$card->calendar}}" target="_blanck" class="calendar"></a>
+                        <a  target="_blanck" class="calendar" data-bs-toggle="modal" data-bs-target="#exampleModal"></a>
                     </div>
                     
 

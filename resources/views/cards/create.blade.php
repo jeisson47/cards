@@ -7,7 +7,7 @@
 <main class="container">
 
     <div class="d-flex align-items-center justify-content-center py-3">
-        <div class="bg-white p-3 rounded shadow col-6">
+        <div class="bg-white p-3 rounded shadow col-md-6 col-12">
             <form method="POST" action="{{route('card.store')}}" enctype="multipart/form-data">
 
                 @csrf
@@ -84,6 +84,7 @@
                             </div>
                         </div>
 
+                        <p class="fw-bold">Configura los horarios cuando crees la tarjeta</p>
 
                         <div class="form-group">
                             <label for="front">Foto de portada</label>
