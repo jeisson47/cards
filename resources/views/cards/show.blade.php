@@ -49,7 +49,8 @@
         </div>
         <div class="modal-body border-0">
             <p>Podras ingresar a el calendario de {{$card->name_person}} y agendar tu cita, pero recuerda que deben ser en los soguientes horarios</p>
-
+        
+        @if ($schedules)
         @forelse($schedules as $clave => $contenido)
                 @if ($contenido->state === "enable")
                 <p><b>{{ $clave }}</b> de {{date('h:i A', strtotime($contenido->desde)) }} a {{date('h:i A', strtotime($contenido->hasta)) }}</p>
@@ -57,6 +58,9 @@
         @empty
         <p>No hay preferencia de horarios</p>
         @endforelse
+        @else
+        <p class="fw-bold">No hay preferencia de horarios</p>
+        @endif
 
         <p>En el caso de agendar la cita por fuera de estos horarios, se cancelara automaticamente.</p>
 

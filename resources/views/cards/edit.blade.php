@@ -37,18 +37,18 @@
                                 <div class="row">
                                     <div class="col-md-2 col-12">
                                         <div class="form-check">
-                                            <input class="form-check-input check-day" @checked($schedules->lunes and $schedules->lunes->state === "enable") type="checkbox" value=""
+                                            <input class="form-check-input check-day" @if ($schedules) @checked($schedules->lunes and $schedules->lunes->state === "enable") @endif type="checkbox" value=""
                                                 id="check-lunes">
                                             <label class="form-check-label" for="check-lunes">Lunes</label>
                                         </div>
                                     </div>
                                     <div class="col-md col-6">
                                         <input type="time" disabled name="" id="since-lunes"
-                                            class="form-control" placeholder="" value="{{$schedules->lunes->desde}}" aria-describedby="helpId">
+                                            class="form-control" placeholder="" value="@if ($schedules){{$schedules->lunes->desde}} @endif" aria-describedby="helpId">
                                     </div>
                                     <div class="col-md col-6">
                                         <input type="time" disabled name="" id="until-lunes"
-                                            class="form-control" placeholder="" value="{{$schedules->lunes->hasta}}" aria-describedby="helpId">
+                                            class="form-control" placeholder="" value="@if ($schedules) {{$schedules->lunes->hasta}} @endif" aria-describedby="helpId">
                                     </div>
                                     <div class="col-md col-12 my-2">
                                         <button class="btn btn-ligth" type="submit"><i
@@ -62,7 +62,7 @@
                                 <div class="row">
                                     <div class="col-md-2 col-12">
                                         <div class="form-check">
-                                            <input class="form-check-input check-day" @checked($schedules->martes and $schedules->martes->state === "enable")  type="checkbox" value=""
+                                            <input class="form-check-input check-day" @if ($schedules) @checked($schedules->martes and $schedules->martes->state === "enable") @endif  type="checkbox" value=""
                                                 id="check-martes">
                                             <label class="form-check-label" for="check-martes">
                                                 Martes
@@ -71,11 +71,11 @@
                                     </div>
                                     <div class="col-md col-6">
                                         <input type="time" disabled name="" id="since-martes"
-                                            class="form-control" placeholder="" value="{{$schedules->martes->desde}}" aria-describedby="helpId">
+                                            class="form-control" placeholder="" value="@if ($schedules) {{$schedules->martes->desde}} @endif" aria-describedby="helpId">
                                     </div>
                                     <div class="col-md col-6">
                                         <input type="time" disabled name="" id="until-martes"
-                                            class="form-control" placeholder="" value="{{$schedules->martes->hasta}}" aria-describedby="helpId">
+                                            class="form-control" placeholder="" value="@if ($schedules) {{$schedules->martes->hasta}} @endif" aria-describedby="helpId">
                                     </div>
                                     <div class="col-md col-12 my-2">
                                         <button class="btn btn-ligth" type="submit"><i
@@ -89,7 +89,7 @@
                                     <div class="col-md-2 col-12">
                                         <div class="form-check">
                                             <input class="form-check-input check-day" type="checkbox"
-                                                value="" id="check-miercoles" @checked($schedules->miercoles and $schedules->miercoles->state === "enable")>
+                                                value="" id="check-miercoles" @if ($schedules) @checked($schedules->miercoles and $schedules->miercoles->state === "enable") @endif>
                                             <label class="form-check-label" for="check-miercoles">
                                                 Miercoles
                                             </label>
@@ -98,12 +98,12 @@
                                     <div class="col-md col-6">
                                         <input type="time" disabled name="" id="since-miercoles"
                                             class="form-control" placeholder=""
-                                            aria-describedby="helpId" value="{{$schedules->miercoles->desde}}">
+                                            aria-describedby="helpId" value="@if ($schedules) {{$schedules->miercoles->desde}} @endif">
                                     </div>
                                     <div class="col-md col-6">
                                         <input type="time" disabled name="" id="until-miercoles"
                                             class="form-control" placeholder=""
-                                            aria-describedby="helpId" value="{{$schedules->miercoles->hasta}}">
+                                            aria-describedby="helpId" value="@if ($schedules) {{$schedules->miercoles->hasta}} @endif">
                                     </div>
                                     <div class="col-md col-12 my-2">
                                         <button class="btn btn-ligth" type="submit"><i
@@ -117,7 +117,7 @@
                                     <div class="col-md-2 col-12">
                                         <div class="form-check">
                                             <input class="form-check-input check-day" type="checkbox"
-                                                value="" id="check-jueves" @checked($schedules->jueves and $schedules->jueves->state === "enable")>
+                                                value="" id="check-jueves" @if ($schedules) @checked($schedules->jueves and $schedules->jueves->state === "enable") @endif>
                                             <label class="form-check-label" for="check-jueves">
                                                 Jueves
                                             </label>
@@ -126,12 +126,12 @@
                                     <div class="col-md col-6">
                                         <input type="time" disabled name="" id="since-jueves"
                                         class="form-control" placeholder=""
-                                        aria-describedby="helpId" value="{{$schedules->jueves->desde}}">
+                                        aria-describedby="helpId" value="@if ($schedules) {{$schedules->jueves->desde}} @endif" >
                                     </div>
                                     <div class="col-md col-6">
                                         <input type="time" disabled name="" id="until-jueves"
                                         class="form-control" placeholder=""
-                                        aria-describedby="helpId" value="{{$schedules->jueves->hasta}}">
+                                        aria-describedby="helpId" value="@if ($schedules) {{$schedules->jueves->hasta}} @endif" >
                                     </div>
                                     <div class="col-md col-12 my-2">
                                         <button class="btn btn-ligth" type="submit"><i
@@ -145,7 +145,7 @@
                                     <div class="col-md-2 col-12">
                                         <div class="form-check">
                                             <input class="form-check-input check-day" type="checkbox"
-                                                value="" id="check-viernes" @checked($schedules->viernes and $schedules->viernes->state === "enable")>
+                                                value="" id="check-viernes" @if ($schedules) @checked($schedules->viernes and $schedules->viernes->state === "enable") @endif>
                                             <label class="form-check-label" for="check-viernes">
                                                 Viernes
                                             </label>
@@ -154,12 +154,12 @@
                                     <div class="col-md col-6">
                                         <input type="time" disabled name="" id="since-viernes"
                                         class="form-control" placeholder=""
-                                        aria-describedby="helpId" value="{{$schedules->viernes->desde}}">
+                                        aria-describedby="helpId" value="@if ($schedules) {{$schedules->viernes->desde}} @endif" >
                                     </div>
                                     <div class="col-md col-6">
                                         <input type="time" disabled name="" id="until-viernes"
                                             class="form-control" placeholder=""
-                                            aria-describedby="helpId" value="{{$schedules->viernes->hasta}}">
+                                            aria-describedby="helpId" value="@if ($schedules) {{$schedules->viernes->hasta}} @endif" >
                                     </div>
                                     <div class="col-md col-12 my-2">
                                         <button class="btn btn-ligth" type="submit"><i
@@ -173,7 +173,7 @@
                                     <div class="col-md-2 col-12">
                                         <div class="form-check">
                                             <input class="form-check-input check-day" type="checkbox"
-                                                value="" id="check-sabado" @checked($schedules->sabado and $schedules->sabado->state === "enable")>
+                                                value="" id="check-sabado" @if ($schedules) @checked($schedules->sabado and $schedules->sabado->state === "enable") @endif>
                                             <label class="form-check-label" for="check-sabado">
                                                 Sabado
                                             </label>
@@ -182,12 +182,12 @@
                                     <div class="col-md col-6">
                                         <input type="time" disabled name="" id="since-sabado"
                                         class="form-control" placeholder=""
-                                        aria-describedby="helpId" value="{{$schedules->sabado->desde}}">
+                                        aria-describedby="helpId" value="@if ($schedules) {{$schedules->sabado->desde}} @endif" >
                                     </div>
                                     <div class="col-md col-6">
                                         <input type="time" disabled name="" id="until-sabado"
                                         class="form-control" placeholder=""
-                                        aria-describedby="helpId" value="{{$schedules->sabado->hasta}}">
+                                        aria-describedby="helpId" value="@if ($schedules) {{$schedules->sabado->hasta}} @endif" >
                                     </div>
                                     <div class="col-md col-12 my-2">
                                         <button class="btn btn-ligth" type="submit"><i
@@ -201,7 +201,7 @@
                                     <div class="col-md-2 col-12">
                                         <div class="form-check">
                                             <input class="form-check-input check-day" type="checkbox"
-                                                value="" id="check-domingo" @checked($schedules->domingo and $schedules->domingo->state === "enable")>
+                                                value="" id="check-domingo" @if ($schedules) @checked($schedules->domingo and $schedules->domingo->state === "enable") @endif>
                                             <label class="form-check-label" for="check-domingo">
                                                 Domingo
                                             </label>
@@ -210,11 +210,11 @@
                                     <div class="col-md col-6">
                                         <input type="time" disabled name="" id="since-domingo"
                                         class="form-control" placeholder=""
-                                        aria-describedby="helpId" value="{{$schedules->domingo->desde}}">
+                                        aria-describedby="helpId" value="@if ($schedules) {{$schedules->domingo->desde}} @endif" >
                                     </div>
                                     <div class="col-md col-6">
                                         <input type="time" disabled name="" id="until-domingo"
-                                        class="form-control" placeholder="" value="{{$schedules->domingo->hasta}}"
+                                        class="form-control" placeholder="" value="@if ($schedules) {{$schedules->domingo->hasta}} @endif" 
                                         aria-describedby="helpId">
                                     </div>
                                     <div class="col-md col-12 my-2">
